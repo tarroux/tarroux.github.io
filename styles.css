@@ -125,7 +125,6 @@ label {
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 0.8rem;
   background-image: url(/Assets/Images/svg/Status=Status3.svg);
   background-repeat: no-repeat;
   background-position: center center;
@@ -676,7 +675,6 @@ main {
 }
 .menu .title-restaurant {
   width: 100%;
-  font-family: "Shrikhand";
   margin-top: 24px;
   display: flex;
   flex-direction: row;
@@ -685,7 +683,7 @@ main {
   gap: 24px;
   border-color: red;
 }
-.menu h1 {
+.menu .title-restaurant h1 {
   margin: 0;
   font-family: "Shrikhand";
   font-size: 28px;
@@ -701,8 +699,8 @@ main {
   opacity: 0.01;
 }
 .menu .like-container-accueil-restaurant .label-restaurant-accueil-restaurant {
-  width: 22px;
-  height: 21px;
+  width: 100%;
+  height: 100%;
   transition: opacity 0.8s linear;
 }
 .menu .like-container-accueil-restaurant {
@@ -712,7 +710,7 @@ main {
 .menu .label-restaurant-accueil-restaurant {
   content: "";
   position: absolute;
-  top: -10px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
