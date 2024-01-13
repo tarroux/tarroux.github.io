@@ -17,7 +17,7 @@ body,
 main {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 99%;
     height: auto;
 
     display: flex;
@@ -408,7 +408,7 @@ header {
 
 /* SEARCH-BAR */
 .search-bar {
-    width: 100%;
+    width: 102%;
     min-width: 375px;
     margin: 0;
     padding: 15px 0;
@@ -604,7 +604,7 @@ header {
 
 /* Footer */
 footer {
-    width: 100%;
+    width: 102%;
     background-color: $background-footer-grey;
     
     .footer-content {
