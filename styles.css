@@ -11,13 +11,23 @@ html {
   height: auto;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  animation: runScroll 8s linear;
 }
 
+@keyframes runScroll {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: auto;
+  }
+}
 body,
 main {
   margin: 0;
   padding: 0;
-  width: 99%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -151,7 +161,7 @@ input[type=checkbox]:checked + label {
 
 .loader-page {
   width: 100%;
-  height: auto;
+  height: 100%;
   background: linear-gradient(#ff79da, #9356DC);
   display: flex;
   align-items: center;
@@ -159,8 +169,9 @@ input[type=checkbox]:checked + label {
   animation: opacite 1s linear 4s forwards;
 }
 .loader-page .loader {
-  width: 50px;
-  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  margin-left: 5px;
   position: relative;
   animation: opacite 1s linear 4s both;
 }
@@ -229,7 +240,7 @@ header img {
 
 /* SEARCH-BAR */
 .search-bar {
-  width: 102%;
+  width: 100%;
   min-width: 375px;
   margin: 0;
   padding: 15px 0;
@@ -240,11 +251,12 @@ header img {
   background-color: #EAEAEA;
 }
 .search-bar input {
-  width: 109px;
+  width: 120px;
   background-color: #EAEAEA;
   border: none;
 }
 .search-bar input::placeholder {
+  font-weight: 700;
   color: #353535;
 }
 .search-bar svg {
@@ -304,19 +316,18 @@ header img {
   padding-bottom: 15px;
 }
 .fonctionnement .fonctionnement-title {
+  width: 100%;
   font-size: 24px;
   font-weight: 700;
-  padding-left: 6%;
+  padding-left: 8%;
 }
 .fonctionnement .position-card {
-  width: 95%;
-  padding: 0 10px;
+  padding-left: 9%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .fonctionnement .small-card {
-  width: 100%;
+  width: 90%;
   margin: 15px 0;
   width: 90%;
   height: 72.4px;
@@ -348,29 +359,35 @@ header img {
 }
 @media screen and (min-width: 1075px) {
   .fonctionnement .small-card {
-    width: 322px;
     margin: 0 18px;
   }
 }
 @media screen and (min-width: 1075px) {
   .fonctionnement {
-    width: 90%;
+    width: 88%;
+    max-width: 1080px;
+    margin: 0 7%;
+    padding-left: 0;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .fonctionnement .fonctionnement-title {
-    width: 88%;
+    width: 94%;
     max-width: 1080px;
+    padding-left: 0;
   }
   .fonctionnement .position-card {
+    width: 94%;
+    padding-left: 0;
     max-width: 1080px;
     flex-direction: row;
     gap: 15px;
   }
   .fonctionnement .small-card {
-    min-width: 322px;
-    width: auto;
+    width: 33%;
+    max-width: 322px;
     margin: 0 5px;
   }
 }
@@ -393,7 +410,7 @@ header img {
 
 /* RESTAURANTS */
 .restaurants {
-  width: 98%;
+  width: 100%;
   height: auto;
   padding: 15px 15px 25px;
   display: flex;
@@ -403,9 +420,10 @@ header img {
   background-color: #f6f6F6;
 }
 .restaurants .restaurants-title {
+  width: 88%;
   font-size: 24px;
   font-weight: 700;
-  padding-left: 7%;
+  padding-left: 9%;
 }
 .restaurants .restaurants-position {
   width: 88%;
@@ -416,11 +434,11 @@ header img {
   justify-content: center;
 }
 .restaurants .big-card {
-  width: 100%;
+  width: 95%;
   height: 251px;
   margin-bottom: 30px;
   border-radius: 15px;
-  box-shadow: 7px 7px 6px rgb(160, 159, 159);
+  box-shadow: 1px 1px 1px rgb(212, 212, 212);
 }
 .restaurants .big-card .card-restaurant {
   display: block;
@@ -452,7 +470,6 @@ header img {
   flex-direction: row;
 }
 .restaurants .big-card .card-content .big-card-title {
-  /* A programmer*/
   font-size: 18px;
   font-weight: 700;
   margin: 0 0 5px;
@@ -504,7 +521,9 @@ header img {
   }
   .restaurants .restaurants-title {
     width: 80%;
-    max-width: 1080px;
+    max-width: 1010px;
+    margin-left: 1%;
+    padding-left: 0;
     display: flex;
     justify-content: flex-start;
   }
@@ -785,7 +804,7 @@ main {
 .menu .block-composition .card-menu h3 {
   margin: 5px;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
 }
 .menu .block-composition .card-menu p {
   margin: 5px;

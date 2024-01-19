@@ -11,13 +11,24 @@ html {
     height: auto;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    animation: runScroll 8s linear;
+}
+
+@keyframes runScroll {
+    0% {
+        overflow-y: hidden;
+    }
+    100% {
+        overflow-y: auto;
+    }
 }
 
 body,
 main {
     margin: 0;
     padding: 0;
-    width: 99%;
+    width: 100%;
     height: auto;
 
     display: flex;
@@ -84,7 +95,7 @@ $badge-green:  #99E2D0;
     font-weight: 700;
 }
 
-@mixin h3 {/* A programmer*/
+@mixin h3 {
     font-size: 18px;
     font-weight: 700;
 }
@@ -140,18 +151,17 @@ $badge-green:  #99E2D0;
     }
     
     @media screen and (min-width:1075px) {
-        width: 322px;
         margin: 0 18px;
     }
 }
 
 /* BIG CARD */
 @mixin big-card {
-    width: 100%;
+    width: 95%;
     height: 251px;
     margin-bottom: 30px;
     border-radius: 15px;
-    box-shadow: 7px 7px 6px rgb(160, 159, 159);
+    box-shadow: 1px 1px 1px rgb(212, 212, 212);
     .card-restaurant {
         display: block;
         width: 100%;
@@ -332,13 +342,14 @@ input[type="checkbox"]:checked + label {
 
 .loader-page {
     width: 100%;
-    height: auto;
+    height: 100%;
     background: linear-gradient(#ff79da, #9356DC);
     @include center;
     animation: opacite 1s linear 4s forwards;
     .loader {
-        width: 50px;
-        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+        margin-left: 5px;
         position: relative;
         animation: opacite 1s linear 4s both;
     }
@@ -371,11 +382,13 @@ input[type="checkbox"]:checked + label {
     border: 6px solid transparent;
     border-top-color: #9356DC;
     animation: rotation 1s linear 4;
+    
 }
 
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
+        
     }
     99% {
         transform: rotate(360deg); 
@@ -408,18 +421,19 @@ header {
 
 /* SEARCH-BAR */
 .search-bar {
-    width: 102%;
+    width: 100%;
     min-width: 375px;
     margin: 0;
     padding: 15px 0;
     @include row-center;
     background-color: $background-soft-grey;
     input {
-        width: 109px;
+        width: 120px;
         background-color: $background-soft-grey;
         border: none;
     }
     input::placeholder {
+        font-weight: 700;
         color: $font-grey;
     }
     svg {
@@ -473,36 +487,46 @@ header {
     padding-left: 15px;
     padding-bottom: 15px;
     .fonctionnement-title {
+        width: 100%;
         @include h2;
-        padding-left: 6%;
+        padding-left: 8%;
     }
     .position-card {
-        width: 95%;
-        padding: 0 10px;
-        @include column;
+        //width: 80%;
+        padding-left: 9%;
+        // @include column;
+        display: flex;
+        flex-direction: column;
     }
     .small-card {
-        width: 100%;
+        width: 90%;
         margin: 15px 0;
         @include small-card;
     }
     @media screen and (min-width: 1075px) {
-        width: 90%;
+        width: 88%;
+        max-width: 1080px;
+        margin: 0 7%;
+        padding-left: 0;
+        padding-bottom: 30px;
         @include column;
         .fonctionnement-title {
-            width: 88%;
+            width: 94%;
             max-width: 1080px;
+            padding-left: 0;
         }
 
         .position-card  {
+            width: 94%;
+            padding-left: 0;
             max-width: 1080px;
             flex-direction: row;
             gap: 15px;
         }
 
         .small-card {
-            min-width: 322px;
-            width: auto;
+            width: 33%;
+            max-width: 322px;
             margin: 0 5px;
         }
     }
@@ -527,15 +551,16 @@ header {
 
 /* RESTAURANTS */
 .restaurants {
-    width: 98%;
+    width: 100%;
     height: auto;
     padding: 15px 15px 25px;
     @include column;
     align-items: flex-start;
     background-color: $background-very-light-grey;
     .restaurants-title {
+        width: 88%;
         @include h2;
-        padding-left: 7%;
+        padding-left: 9%;
     }
     .restaurants-position {
         width: 88%;
@@ -566,7 +591,9 @@ header {
         @include column;
         .restaurants-title {
             width: 80%;
-            max-width: 1080px;
+            max-width: 1010px;
+            margin-left: 1%;
+            padding-left: 0;
             display: flex;
             justify-content: flex-start;
         }
@@ -899,8 +926,7 @@ main {
             
             h3 {
                 margin: 5px;
-                font-size: 18px;
-                font-weight: 500;
+                @include h3;
             }
 
             p {
